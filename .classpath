@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="codesprint5"/>
+	<classpathentry kind="src" path="overnite2014"/>
+	<classpathentry kind="src" path="codechef-feb14"/>
+	<classpathentry kind="src" path="2020-hack"/>
+	<classpathentry kind="src" path="101-Hack"/>
+	<classpathentry kind="src" path="fp"/>
+	<classpathentry kind="src" path="daily-challenges"/>
+	<classpathentry kind="src" path="scala"/>
+	<classpathentry kind="src" path="java8"/>
+	<classpathentry kind="lib" path="target/classes">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="ccw.LEININGEN_CONTAINER">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="clojure-learn/target/native/macosx/x86"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="classes">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/bcprov-jdk16-146.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

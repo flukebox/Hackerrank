@@ -23,10 +23,8 @@ public class ServiceLane {
 
   class SegmentTree {
     private enum ST_TYPE {MIN, MAX, SUM};
-    
     private int[] aux;
     private ST_TYPE type;
-    
     public SegmentTree(int size, String type){
       this.type = ST_TYPE.valueOf(type);
       aux = new int[4*(size+1)];

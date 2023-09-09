@@ -1,13 +1,13 @@
-# clojure-learn
+# What does this repo contains ?
 
-A Clojure library designed to ... well, that part is up to you.
+This contians some of the hacker rank solutions which I have done long back. 
+Few other snippets when I was learning clojure, scala
 
 ## Usage
+Most of the code is limited to each file. Where folder names either denot langauge name or hacker challenge name.
 
-FIXME
+
+Feel free to copy and distribute
 
 ## License
-
-Copyright © 2013 FIXME
-
-Distributed under the Eclipse Public License, the same as Clojure.
+Creative Commons 3

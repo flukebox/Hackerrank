@@ -9,9 +9,12 @@ https://www.hackerrank.com/flukebox
 
 ## Usage
 Most of the code is limited to each file. Where folder names either denote langauge name or hacker challenge name.
+You can search for each problem by filename on hackerrank.
+This is for educational/inspirational purpose only. 
 
+Feel free to copy and distribute.
 
-Feel free to copy and distribute
+PLEASE DO NOT USE THIS TO CHEAT.
 
 ## License
 Creative Commons 3

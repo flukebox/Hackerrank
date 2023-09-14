@@ -1,5 +1,3 @@
-package arrays;
-
 import java.io.*;
 import java.math.*;
 import java.security.*;

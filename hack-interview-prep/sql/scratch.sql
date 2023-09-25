@@ -727,7 +727,6 @@ CALL PrintPrime(1000);
 --Write a query to output the start and end dates of projects listed by the number of days it took to complete
 --the project in ascending order. If there is more than one project that have the same number of completion days,
 --then order by the start date of the project.
-
 WITH SD_RANK(START_DATE, S_RANK) AS (
 SELECT START_DATE, RANK() OVER( ORDER BY START_DATE) S_RANK
 FROM PROJECTS WHERE START_DATE  NOT IN (SELECT END_DATE FROM PROJECTS)

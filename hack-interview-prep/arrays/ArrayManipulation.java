@@ -29,7 +29,7 @@ class Result {
             int a = queries.get(i).get(0);
             int b = queries.get(i).get(1);
             int k = queries.get(i).get(2);
-            // set prefix sum for a-1 till b-1 and then rever after b-1
+            // set prefix sum for a-1 till b-1 and then reverse after b-1
             ar[a-1] += k;
             if(b < n) ar[b] -= k;
         }

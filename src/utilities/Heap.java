@@ -3,7 +3,7 @@ public class Heap{
   private boolean mintype = true; 
   private int[] heap;
   private int maxsize, count = 0;
-  // parent at (i-1)/2, lchild = 2*i+1, rchild = 2*i+2
+  // for ith index,  parent at (i-1)/2, lchild = 2*i+1, rchild = 2*i+2
   
   Heap(int size, boolean type){
     this.maxsize = size;

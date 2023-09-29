@@ -1,0 +1,52 @@
+For any given natural number n, to find prime numbers till n
+We can observe that for all numbers (2, n)
+    -- if given number i is not prime, than it's prime factor would in between [2, sqrt(i)] both inclusive
+    -- otherwise number is prime
+    -- Also, observe that all numbers which are less than i*i and not prime and multiple of i i.e k*i
+       We have already visited them by prime factor of k which is less than i
+
+       Set all elements of array of length N+1 to true
+       P = [0, 1 .... N] for each i P[i] = True;
+       p[0] = false; P[1] = false;
+       for(i <- 2 to n)
+            // P[i] is prime
+            if(P[i]){
+                // Set all numbers i*i <= k <= n, k is multiple of i
+                k = i*i;
+                while(k <= n){
+                    P[k] = false;
+                    k += i;
+                }
+            }
+            i++;
+
+    This way we get all the prime numbers 1 to N.
+    Time Complexity::
+        For each prime Pi-- we touch at max n/Pi elements
+        (N*Sum( 1/P1 + 1/P2 + 1/P3... 1/PQ) PQ <= N) == N*loglog(N)
+
+    // Modified Sieve for Prime factorization
+    F = [0....N] for each F[i] = 0
+   for(i <- 2 to n)
+        if(F[i] == 0){
+            // Set all numbers i*i <= k <= n, k is multiple of i
+            k = i*i;
+            while(k <= n){
+                if(F[k] == 0) F[k] = i;
+                k += i;
+            }
+        }
+        i++;
+    F[i] contains minimum prime factor for i
+    Now, to get PrimeFactor of given number X .. let we have P[0...SQRT[X]]
+    PrimeFactor(x, F)
+        Factors = []
+        while(F[x] != 0){
+            add F[x] to Factors;
+            x = x/F[x];
+        }
+        add x to Factors;
+        return Factors;
+
+    TimeComplexity == N*loglogN to get F and log(X) to get Factors
+    Because at each step in Factors, we atleast half x because min prime number is 2

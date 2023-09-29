@@ -28,44 +28,38 @@ class Result {
 
     public static List<Integer> bfs(int n, int m, List<List<Integer>> edges, int s) {
         // Write your code here
-        ArrayList<Integer> bfs = new ArrayList<Integer>();
         int[][] adj = new int[n][n];
-        int[] distance = new int[n];
-        boolean[] traversed = new boolean[n];
-        for(int i = 0; i<m; i++){
-            List<Integer> edge = edges.get(i);
-            adj[edge.get(0)-1][edge.get(1)-1] = 1;
-            adj[edge.get(1)-1][edge.get(0)-1] = 1;
+        for(int i = 0; i <m; i++){
+            int n1 = edges.get(i).get(0)-1;
+            int n2 = edges.get(i).get(1)-1;
+            adj[n1][n2]=1;
+            adj[n2][n1]=1;
         }
-        for(int i = 0; i< n; i++) distance[i] = -1;
-        distance[s-1] = 0;
 
-        // start queue with s node edges
-        for(int i = 0; i<n; i++){
-            if(adj[s-1][i] == 1) {
-                bfs.add(i);
-                distance[i] = 6;
-            }
-        }
-        traversed[s-1] = true;
-        // while queue is not empty
+        boolean[] traversed = new boolean[n];
+        int[] d = new int[n];
+        Arrays.fill(d, -1);
+        ArrayList<Integer> bfs = new ArrayList<>();
+        bfs.add(s-1);
+        d[s-1] = 0;
         while(!bfs.isEmpty()){
-            int e = bfs.remove(0);
-            if(!traversed[e]){
-                for(int i = 0; i<n; i++){
-                    if(adj[e][i] ==1 && distance[i] ==-1) {
-                        distance[i] = distance[e] + 6;
+            int c = bfs.remove(0);
+            if(!traversed[c]){
+                for(int i = 0; i < n; i++){
+                    if(adj[c][i] == 1 && d[i] ==-1 && !traversed[i]){
                         bfs.add(i);
+                        d[i] = d[c] + 6;
                     }
                 }
             }
-            traversed[e] = true;
+            traversed[c] = true;
         }
-        ArrayList<Integer> res = new ArrayList<>();
-        for(int i = 0; i<n; i++){
-            if( i+1 != s) res.add(distance[i]);
+
+        ArrayList<Integer> dis = new ArrayList<Integer>();
+        for(int i =0; i<n; i++){
+            if(i+1 != s) dis.add(d[i]);
         }
-        return res;
+        return dis;
     }
 
 }

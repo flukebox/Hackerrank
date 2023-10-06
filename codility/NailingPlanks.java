@@ -6,7 +6,7 @@ public class NailingPlanks {
         int n = A.length;
         int m = C.length;
         int N = 60000;
-        // we basically, whants to do binary search for index i in C ,
+        // we basically, wants to do binary search for index i in C ,
         // where All nails till i are sufficient to nail all planks
         // store the min index of nail which Nailed ith Plank
         int start = 0;

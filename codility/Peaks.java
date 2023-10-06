@@ -29,10 +29,11 @@ class Peaks {
         if(peaksSum[n-1] == 1) return 1;
 
         int maxBlocks = 0;
-        for (int i = 2; i <= n ; i++){
+        for (int i = 2; i <= m ; i++){
             // if it's possible to divide A into n/i blocks of size i
             if(n % i == 0){
-                if(isGoodSize(i, n, peaksSum) && (maxBlocks < n/i)) maxBlocks = n/i;
+                if(isGoodSize(i, n, peaksSum)) maxBlocks = Math.max(maxBlocks, n/i);
+                if(isGoodSize(n/i, n, peaksSum)) maxBlocks = Math.max(maxBlocks, i);
             }
         }
         // if prime number
@@ -42,17 +43,17 @@ class Peaks {
 
     boolean isGoodSize(int i, int n, int[] peaksSum){
         int j = i;
+        // first block
+        if ((peaksSum[j-1] == 0))  return  false;
         // check if each block contains a peak
+        j += i;
         while (j <= n){
-            // first block
-            if ( (i == j && peaksSum[j-1] < 1)) break;
-            if ( j > i && (peaksSum[j-1] - peaksSum[j-i-1]) < 1) break;
             // every block succeeded in condition, we are a good block
             // go to next block
-            if( j == n) break;
+            if ((peaksSum[j-1] - peaksSum[j-i-1]) == 0) return false;
             j += i;
         }
-        return j == n;
+        return true;
     }
 }
 

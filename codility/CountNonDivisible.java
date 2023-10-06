@@ -8,7 +8,7 @@ class CountNonDivisible {
     public int[] solution(int[] A) {
         // Implement your solution here
         int n = A.length;
-        int[] C = new int[500001];
+        int[] C = new int[100001];
         // maintain count of each element's occurrence
         for(int i = 0; i < n; i++)  C[A[i]]++;
         int[] out = new int[n];
